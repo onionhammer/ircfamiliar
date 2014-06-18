@@ -1,0 +1,143 @@
+@import "flex.less";
+
+header {
+    .displayflex();
+    font-weight: bold;
+    background: #CCC;
+    color: #A5A5A5;
+    cursor: default;
+    white-space: nowrap;
+    user-select: none;
+    -webkit-user-select: none;
+
+    span {
+        padding: .5rem;
+        .flex(1);
+    }
+
+    a {
+        padding: .5rem .75rem;
+        text-decoration: none;
+    }
+
+    #toggle-statuses {
+        color: #FFF;
+        background: #AAA;
+        display: none;
+
+        &.on, &:hover, &:active {
+            background: #BBB;
+        }
+    }
+
+    #theme {
+        color: #CCC;
+        background: #444;
+        display: none;
+
+        &:hover {
+            background-color: #000;
+        }
+
+        &.on {
+            background-color: #F0F0F0;
+            color: #8D8D8D;
+
+            &:hover {
+                background-color: #F7F7F7;
+            }
+        }
+    }
+
+    #notifications {
+        color: #FFF;
+        background: #91A887;
+        display: none;
+        
+        &:hover, &:active {
+            background: #9CCC86;
+        }
+
+        &.on {
+            background: #AAA;
+
+            &:hover, &:active {
+                background: #BBB;
+            }
+        }
+    }
+
+    #settings {
+        background: #B3B3B3;
+        position: relative;
+
+        &.on, &:hover {
+            background-color: #E9E9E9;
+        }
+    }
+
+    #logout {
+        color: #FFF;
+        background: #888;
+
+        &:hover, &:active {
+            background: #649DDB;
+        }
+    }
+}
+
+html { height: 100%; }
+
+body {
+    height: 100%;
+    .displayflex();
+    .flexdirection(column);
+}
+
+#content {
+    .displayflex();
+    .flexdirection(column);
+    .flex(1);
+
+    .pad {
+        padding: 1.5rem;
+    }
+
+    p {
+        padding: .25rem 1rem;
+    }
+
+    form {
+        .flex(1);
+
+        p {
+            font-size: 110%;
+            padding: .25rem 0 .5rem 0;
+        }
+
+        li {
+            margin-bottom: .2rem;
+        }
+
+        input {
+            border: 1px solid #CCC;
+            padding: .2rem;
+        }
+
+        button {
+            padding: .2rem 1rem;
+        }
+    }
+}
+
+footer {
+	padding: .5rem .5rem 3rem .5rem;
+    background-color: #D8D8D8;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+
+    a { cursor: pointer; }
+}
+
+@import "chat.less";
+@import "layout.mobile.less";
+@import "dark.less";

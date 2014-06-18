@@ -1,0 +1,81 @@
+.dark_scrollstyle() {
+
+	&::-webkit-scrollbar {
+	    width: 5px;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: #666;
+	}
+
+	&::-webkit-scrollbar-track {
+		background-color: #333;
+	}
+
+}
+
+body.dark {
+	background: #000;
+	color: #999;
+
+	header {
+		background: #383838;
+	}
+
+	#chatbox {
+		background: #141414;
+		color: #EEE;
+		border-color: #202020;
+		border-bottom-color: #141414;
+
+		&:focus {
+			border-top-color: #2C2C2C;
+		}
+
+		&:disabled {
+			background: #303030;
+		}
+	}
+
+	.logview {
+
+		li {
+			border-bottom-color: #000;
+		}
+
+		li.last-read {
+			border-bottom-color: #464132;
+		}
+
+		li.endlog {
+			border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+		}
+
+		li.part, li.join {
+			color: #4f4f4f;
+		}
+
+		.dark_scrollstyle();
+	}
+
+	.userlist {
+		.dark_scrollstyle();
+		background-color: #000;
+	}
+
+	#channels {
+		background-color: #3F3F3F;
+
+		li a {
+			background-color: #333;
+
+			&.active {
+				background-color: #141414;
+			}
+		}
+	}
+
+	footer {
+		background: #292929;
+	}
+}

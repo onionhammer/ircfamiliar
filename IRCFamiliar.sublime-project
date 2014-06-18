@@ -1,0 +1,49 @@
+{
+	"build_systems":
+	[
+		{
+			"cmd": [ "make" ],
+            "working_dir": "${project_path}",
+            "name": "Build",
+
+            "variants": [
+                {
+                    "cmd": [
+                        "make",
+                        "clean"
+                    ],
+                    "name": "Clean",
+                    "selector": "source.nimrod"
+                }
+            ]
+		}
+	],
+	"folders":
+	[
+		{
+			"file_exclude_patterns":
+			[
+				"*.csproj",
+				"*.sln",
+				"*.csproj.user",
+				"*.res",
+				"*.rc",
+				"iRCFamiliar",
+				"versioninfo"
+			],
+			"folder_exclude_patterns":
+			[
+				"nimcache",
+				"node_modules",
+				"bin",
+				"obj"
+			],
+			"path": "."
+		}
+	],
+	"settings":
+	{
+		"nim-project": "main.nim",
+		"tab_size": 4
+	}
+}

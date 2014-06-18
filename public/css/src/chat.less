@@ -1,0 +1,198 @@
+/* Reference: http://philipwalton.github.io/solved-by-flexbox/ */
+@import "flex.less";
+
+.scrollstyle() {
+
+	&::-webkit-scrollbar {
+	    width: 5px;
+        height: 0;
+	}
+
+	&::-webkit-scrollbar-track {
+		background-color: #EEE;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: #CCC;
+	}
+
+    &::-webkit-scrollbar-corner {
+        background-color: transparent;
+    }
+
+}
+
+/* IRC Channel Display */
+.channel-display {
+	display: none;
+    overflow-x: hidden;
+    .flex(1);
+
+	&.active {
+        .displayflex();
+	}
+}
+
+/* User links */
+#content li a.user {
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+/* IRC Chat Pane */
+.logview {
+    .flex(1);
+	overflow-y: scroll;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+    padding-bottom: 3rem;
+
+    a { cursor: pointer; }
+
+	li {
+        .displayflex();
+  		padding: .25rem;
+  		border-bottom: 1px solid #FFF;
+
+  		&.last-read {
+  			border-bottom-color: #F1F0ED;
+  		}
+
+  		&.mention {
+  			color: #DB6464;
+  		}
+
+        &.action {
+            color: #9AC3C7;
+        }
+
+  		&.part, &.join {
+  			color: #BBB;
+  		}
+
+        &.motd {
+            color: #6F7477;
+        }
+
+        &.topic {
+            color: #6A9780;
+        }
+
+        &.endlog {
+            border-bottom: 1px solid rgba(0, 0, 0, .2);
+        }
+
+        &:first-child.endlog {
+            border: none;
+        }
+	}
+
+	.user {
+		padding: 0 .5rem 0 0;
+		font-weight: bold;
+
+		&:after { content: ":"; }
+	}
+
+	.message {
+        .flex(1);
+		word-wrap: break-word;
+	}
+
+	.scrollstyle();
+}
+
+body.hide-statuses .logview {
+	.part, .join {
+        &:not(.show) {
+    		display: none;
+        }
+	}
+}
+
+/* User List */
+.userlist {
+	max-width: 8rem;
+	min-width: 6rem;
+	overflow-y: scroll;
+    background-color: #FFF;
+
+	li a {
+		display: block;
+		padding: .2rem .5rem;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
+
+	.scrollstyle();
+}
+
+/* Chat Box */
+#chatbox {
+	padding: .5rem;
+    border-width: 1px 0 1px 0;
+	border-style: solid;
+    border-color: #DDD;
+    border-bottom-color: #FFF;
+    outline: none;
+
+	&:focus {
+		border-top-color: #C9C9C9;
+	}
+
+    &:disabled {
+        background: #ECECEC;
+    }
+}
+
+/* Channel list */
+#channels {
+
+	.shadow() {
+		box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+	}
+
+	.displayflex();
+	padding: 0 0 .25rem .5rem;
+	background-color: #ECECEC;
+    overflow-x: auto;
+    user-select: none;
+    -webkit-user-select: none;
+    .scrollstyle();
+	.shadow();
+
+	li {
+        min-width: 3.5rem;
+
+         a {
+    		display: block;
+    		padding: .3rem .5rem;
+    		margin: 0 .2rem .1rem;
+    		overflow-x: hidden;
+    		background-color: #FAFAFA;
+    		border-bottom: 3px solid #AAA;
+    		.shadow();
+
+    		&.active {
+    			background-color: #FFF;
+    			border-bottom-color: #649DDB;
+    			box-shadow: 0 1px 1px rgba(0,0,0,.1)
+    		}
+
+            &:hover {
+                color: #666;
+            }
+
+    		&.new {
+    			color: #649DDB;
+    		}
+
+    		&.alert {
+    			color: #DB6464;
+    		}
+        }
+	}
+
+}
+
+@import "chat.mobile.less";

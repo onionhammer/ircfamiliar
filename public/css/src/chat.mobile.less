@@ -1,0 +1,30 @@
+/* Mobile CSS Rules for the chat view */
+
+@media (max-height: 250px) {
+    #content #channels {
+        display: none;
+    }
+}
+
+@media (max-width: 800px) {
+    .logview {
+    	box-shadow: none;
+        padding-bottom: 1rem;
+	}
+}
+
+@media (max-height: 500px) {
+    .logview {
+        padding-bottom: inherit;
+    }
+}
+
+#content.mobile {
+    .userlist {
+        max-width: 6rem;
+    }
+
+    &.shut .userlist {
+        margin-right: -6rem;
+    }
+}

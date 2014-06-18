@@ -1,0 +1,18 @@
+.displayflex() {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.flexdirection(@dir) {
+    -webkit-flex-flow: @dir;
+    -ms-flex-direction: @dir;
+    flex-direction: @dir;
+}
+
+.flex(@amt) {
+    flex: @amt;
+    -ms-flex: @amt;
+}

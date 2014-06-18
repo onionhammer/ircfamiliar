@@ -1,0 +1,474 @@
+/*Reduced reset.css*/
+body,
+ul,
+ol,
+li,
+input,
+menu,
+button,
+p {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+input,
+button,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  *font-size: 100%;
+}
+body {
+  padding: 0;
+  margin: 0;
+  background: #FFF;
+  color: #333;
+  font-size: 11pt;
+  font-family: Helvetica;
+  overflow: hidden;
+}
+a {
+  color: #666;
+  cursor: default;
+}
+a:hover {
+  color: #888;
+}
+header {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  font-weight: bold;
+  background: #CCC;
+  color: #A5A5A5;
+  cursor: default;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+}
+header span {
+  padding: .5rem;
+  flex: 1;
+  -ms-flex: 1;
+}
+header a {
+  padding: .5rem .75rem;
+  text-decoration: none;
+}
+header #toggle-statuses {
+  color: #FFF;
+  background: #AAA;
+  display: none;
+}
+header #toggle-statuses.on,
+header #toggle-statuses:hover,
+header #toggle-statuses:active {
+  background: #BBB;
+}
+header #theme {
+  color: #CCC;
+  background: #444;
+  display: none;
+}
+header #theme:hover {
+  background-color: #000;
+}
+header #theme.on {
+  background-color: #F0F0F0;
+  color: #8D8D8D;
+}
+header #theme.on:hover {
+  background-color: #F7F7F7;
+}
+header #notifications {
+  color: #FFF;
+  background: #91A887;
+  display: none;
+}
+header #notifications:hover,
+header #notifications:active {
+  background: #9CCC86;
+}
+header #notifications.on {
+  background: #AAA;
+}
+header #notifications.on:hover,
+header #notifications.on:active {
+  background: #BBB;
+}
+header #settings {
+  background: #B3B3B3;
+  position: relative;
+}
+header #settings.on,
+header #settings:hover {
+  background-color: #E9E9E9;
+}
+header #logout {
+  color: #FFF;
+  background: #888;
+}
+header #logout:hover,
+header #logout:active {
+  background: #649DDB;
+}
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+#content {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  flex: 1;
+  -ms-flex: 1;
+}
+#content .pad {
+  padding: 1.5rem;
+}
+#content p {
+  padding: .25rem 1rem;
+}
+#content form {
+  flex: 1;
+  -ms-flex: 1;
+}
+#content form p {
+  font-size: 110%;
+  padding: .25rem 0 .5rem 0;
+}
+#content form li {
+  margin-bottom: .2rem;
+}
+#content form input {
+  border: 1px solid #CCC;
+  padding: .2rem;
+}
+#content form button {
+  padding: .2rem 1rem;
+}
+footer {
+  padding: .5rem .5rem 3rem .5rem;
+  background-color: #D8D8D8;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+footer a {
+  cursor: pointer;
+}
+/* Reference: http://philipwalton.github.io/solved-by-flexbox/ */
+/* IRC Channel Display */
+.channel-display {
+  display: none;
+  overflow-x: hidden;
+  flex: 1;
+  -ms-flex: 1;
+}
+.channel-display.active {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+/* User links */
+#content li a.user {
+  user-select: none;
+  -webkit-user-select: none;
+}
+/* IRC Chat Pane */
+.logview {
+  flex: 1;
+  -ms-flex: 1;
+  overflow-y: scroll;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  padding-bottom: 3rem;
+}
+.logview a {
+  cursor: pointer;
+}
+.logview li {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  padding: .25rem;
+  border-bottom: 1px solid #FFF;
+}
+.logview li.last-read {
+  border-bottom-color: #F1F0ED;
+}
+.logview li.mention {
+  color: #DB6464;
+}
+.logview li.action {
+  color: #9AC3C7;
+}
+.logview li.part,
+.logview li.join {
+  color: #BBB;
+}
+.logview li.motd {
+  color: #6F7477;
+}
+.logview li.topic {
+  color: #6A9780;
+}
+.logview li.endlog {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.logview li:first-child.endlog {
+  border: none;
+}
+.logview .user {
+  padding: 0 .5rem 0 0;
+  font-weight: bold;
+}
+.logview .user:after {
+  content: ":";
+}
+.logview .message {
+  flex: 1;
+  -ms-flex: 1;
+  word-wrap: break-word;
+}
+.logview::-webkit-scrollbar {
+  width: 5px;
+  height: 0;
+}
+.logview::-webkit-scrollbar-track {
+  background-color: #EEE;
+}
+.logview::-webkit-scrollbar-thumb {
+  background-color: #CCC;
+}
+.logview::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+body.hide-statuses .logview .part:not(.show),
+body.hide-statuses .logview .join:not(.show) {
+  display: none;
+}
+/* User List */
+.userlist {
+  max-width: 8rem;
+  min-width: 6rem;
+  overflow-y: scroll;
+  background-color: #FFF;
+}
+.userlist li a {
+  display: block;
+  padding: .2rem .5rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.userlist::-webkit-scrollbar {
+  width: 5px;
+  height: 0;
+}
+.userlist::-webkit-scrollbar-track {
+  background-color: #EEE;
+}
+.userlist::-webkit-scrollbar-thumb {
+  background-color: #CCC;
+}
+.userlist::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+/* Chat Box */
+#chatbox {
+  padding: .5rem;
+  border-width: 1px 0 1px 0;
+  border-style: solid;
+  border-color: #DDD;
+  border-bottom-color: #FFF;
+  outline: none;
+}
+#chatbox:focus {
+  border-top-color: #C9C9C9;
+}
+#chatbox:disabled {
+  background: #ECECEC;
+}
+/* Channel list */
+#channels {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  padding: 0 0 .25rem .5rem;
+  background-color: #ECECEC;
+  overflow-x: auto;
+  user-select: none;
+  -webkit-user-select: none;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+#channels::-webkit-scrollbar {
+  width: 5px;
+  height: 0;
+}
+#channels::-webkit-scrollbar-track {
+  background-color: #EEE;
+}
+#channels::-webkit-scrollbar-thumb {
+  background-color: #CCC;
+}
+#channels::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+#channels li {
+  min-width: 3.5rem;
+}
+#channels li a {
+  display: block;
+  padding: .3rem .5rem;
+  margin: 0 .2rem .1rem;
+  overflow-x: hidden;
+  background-color: #FAFAFA;
+  border-bottom: 3px solid #AAA;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+#channels li a.active {
+  background-color: #FFF;
+  border-bottom-color: #649DDB;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+#channels li a:hover {
+  color: #666;
+}
+#channels li a.new {
+  color: #649DDB;
+}
+#channels li a.alert {
+  color: #DB6464;
+}
+/* Mobile CSS Rules for the chat view */
+@media (max-height: 250px) {
+  #content #channels {
+    display: none;
+  }
+}
+@media (max-width: 800px) {
+  .logview {
+    box-shadow: none;
+    padding-bottom: 1rem;
+  }
+}
+@media (max-height: 500px) {
+  .logview {
+    padding-bottom: inherit;
+  }
+}
+#content.mobile .userlist {
+  max-width: 6rem;
+}
+#content.mobile.shut .userlist {
+  margin-right: -6rem;
+}
+/* Mobile CSS Rules for the overall layout */
+header.mobile {
+  position: absolute;
+  width: 100%;
+}
+#content.mobile {
+  margin-top: 34px;
+}
+@media (max-height: 350px) {
+  header {
+    display: none;
+  }
+  #content.mobile {
+    margin-top: 0;
+  }
+}
+body.dark {
+  background: #000;
+  color: #999;
+}
+body.dark header {
+  background: #383838;
+}
+body.dark #chatbox {
+  background: #141414;
+  color: #EEE;
+  border-color: #202020;
+  border-bottom-color: #141414;
+}
+body.dark #chatbox:focus {
+  border-top-color: #2C2C2C;
+}
+body.dark #chatbox:disabled {
+  background: #303030;
+}
+body.dark .logview li {
+  border-bottom-color: #000;
+}
+body.dark .logview li.last-read {
+  border-bottom-color: #464132;
+}
+body.dark .logview li.endlog {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+body.dark .logview li.part,
+body.dark .logview li.join {
+  color: #4f4f4f;
+}
+body.dark .logview::-webkit-scrollbar {
+  width: 5px;
+}
+body.dark .logview::-webkit-scrollbar-thumb {
+  background-color: #666;
+}
+body.dark .logview::-webkit-scrollbar-track {
+  background-color: #333;
+}
+body.dark .userlist {
+  background-color: #000;
+}
+body.dark .userlist::-webkit-scrollbar {
+  width: 5px;
+}
+body.dark .userlist::-webkit-scrollbar-thumb {
+  background-color: #666;
+}
+body.dark .userlist::-webkit-scrollbar-track {
+  background-color: #333;
+}
+body.dark #channels {
+  background-color: #3F3F3F;
+}
+body.dark #channels li a {
+  background-color: #333;
+}
+body.dark #channels li a.active {
+  background-color: #141414;
+}
+body.dark footer {
+  background: #292929;
+}
+.hide {
+  display: none;
+}
