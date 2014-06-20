@@ -16,7 +16,10 @@ template view*(isMobile: bool, body: stmt) =
         """
 
     template path =
-        result.add("/scripts/app.js")
+        when defined(debug):
+            result.add "/scripts/app.js"
+        else:
+            result.add "/scripts/app.min.js"
 
     template scripts =
         tmpl html"""<script src=${path} async></script>"""
