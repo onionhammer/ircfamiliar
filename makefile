@@ -13,7 +13,7 @@ STYLES  := $(shell ls public/css/src/*.less)
 
 ##BUILD#####
 all: public/scripts/app.min.js public/css/style.min.css $(output)
-release: public/scripts/app.min.js.gzip public/css/style.min.css.gzip striprelease
+release: public/scripts/app.min.js.gzip public/css/style.min.css.gzip binrelease
 #-----------#
 
 
@@ -32,10 +32,6 @@ binrelease: *.nim ircclient/*.nim web/*.nim web/views/*.nim web/views/templates/
 		--gc:markAndSweep \
 		--passC:-Ofast \
 		c main.nim
-
-striprelease: binrelease
-	strip $(output) -o $(output)
-	upx -9 $(output)
 #-----------#
 
 
