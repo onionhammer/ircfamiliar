@@ -30,13 +30,6 @@ static:
     echo "    version: " & versioninfo.build & "\n\n"
 
 
-# Import Resources
-when defined(windows):
-    # Embed icon
-    const favicon = staticExec("windres favicon.rc -O coff -o favicon.res")
-    {.link: "favicon.res".}
-
-
 # Fields
 let dispatch = newDispatcher()
 
