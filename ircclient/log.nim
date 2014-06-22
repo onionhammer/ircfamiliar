@@ -13,9 +13,9 @@ type TIRCEventCallback* = proc(e: string)
 
 
 # Fields
-const MAX_LOG_LENGTH* = 600           # Total messages in log
-const PRESERVE_LENGTH = 400           # Preserve the last `n` messages when log rolls over
-const MOBILE_LIMIT*   = 150           # Max log to retrive for mobile devices
+const MAX_LOG_LENGTH* = 100#600           # Total messages in log
+const PRESERVE_LENGTH = 50#400           # Preserve the last `n` messages when log rolls over
+const MOBILE_LIMIT*   = 50#150           # Max log to retrive for mobile devices
 const LOG_FILE        = "eventlog.db" # Log file to store IRC events
 
 var doLogging = false
